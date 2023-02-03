@@ -2,10 +2,10 @@
 <vector
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="110dp"
+    android:width="115dp"
     android:height="120dp"
 
-    android:viewportWidth="120"
+    android:viewportWidth="116"
     android:viewportHeight="91"
     >
 

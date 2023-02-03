@@ -1,8 +1,9 @@
 package islom.din.dodo_ilmhona_proskills.repository
 
 
+import islom.din.dodo_ilmhona_proskills.Constants
 import islom.din.dodo_ilmhona_proskills.R
-import islom.din.dodo_ilmhona_proskills.data.Pizza
+import islom.din.dodo_ilmhona_proskills.model.Pizza
 
 class GetPizzaList {
     fun getList(): List<Pizza> {
@@ -10,36 +11,18 @@ class GetPizzaList {
         repeat(5) {
             list.add(
                 Pizza(
-                    id = it,
-                    image = R.drawable.govyadinapng,
-                    name = "2 РїРёС†С†С‹ Рё РЅР°РїРёС‚РѕРє",
-                    about = "2 РїРёС†С†С‹ 25 СЃРј Рё РЅР°РїРёС‚РѕРє РЅР° РІС‹Р±РѕСЂ. Р”Р»СЏ РєРѕРјРїР°РЅРёРё РёР· 2-4 С‡РµР»РѕРІРµРє",
-                    price = 94,
-                    category = "PIZZA",
-                    pizzasSizaPrise = arrayOf(25,30,35)
-                )
-            )
-        }
-        repeat(5) {
-            list.add(
-                Pizza(
-                    id = it,
-                    image = R.drawable.halapenopng,
-                    name = "Coca-Cola Zero",
-                    price = 8,
-                    category = "Dring"
-                )
-            )
-        }
-        repeat(4) {
-            list.add(
-                Pizza(
-                    id = it,
-                    R.drawable.siplyonok,
-                    name = "10 medium pizzas",
-                    about = "10 pizzas 40sm for every taste. For a company of 20-30 people",
-                    price = 675,
-                    category = "Combo"
+                    1,
+                    R.drawable.ingridient_1,
+                    "Новогодный цыплёнок",
+                    "Смесь сыров чеддре и пармезан, соус альфредо, мандарины,цитрусовый соус, новогодный цеплёнок, сыр моцарелла",
+                    60,
+                    Constants.PIZZA,
+                    true,
+                    mapOf(
+                        Constants.MALENKAYA to 60,
+                        Constants.SREDNAYA to 90,
+                        Constants.BOLSHAYA to 112
+                    )
                 )
             )
         }

@@ -1,20 +1,16 @@
 package islom.din.dodo_ilmhona_proskills.view
 
-import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isGone
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import islom.din.dodo_ilmhona_proskills.Constants
 import islom.din.dodo_ilmhona_proskills.R
+import islom.din.dodo_ilmhona_proskills.data.Vkus
 import islom.din.dodo_ilmhona_proskills.databinding.ItemRecyclerSousViewBinding
 
-import islom.din.dodo_ilmhona_proskills.model.Sous
-
-class ListSousAdapter : ListAdapter<Sous, ListSousAdapter.SousViewHolder>(MyDiffUtil()) {
+class ListSousAdapter : ListAdapter<Vkus, ListSousAdapter.SousViewHolder>(MyDiffUtil()) {
      var onClick: ((Int) -> Unit) = {}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SousViewHolder {
         return SousViewHolder(
@@ -32,31 +28,31 @@ class ListSousAdapter : ListAdapter<Sous, ListSousAdapter.SousViewHolder>(MyDiff
 
     inner class SousViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = ItemRecyclerSousViewBinding.bind(itemView)
-        fun bindImage(sous: Sous) {
-            binding.imageSous.setImageResource(sous.image)
-            binding.seconcklik.setStrokeColorResource(R.color.black.toInt())
+        fun bindImage(vkus: Vkus) {
+            binding.imageSous.setImageResource(vkus.image)
+            binding.linearLayoutContiner.setBackgroundResource(R.drawable.stoke_select.toInt())
             binding.imageSous.setOnClickListener() {
                 onClick.invoke(adapterPosition)
-                sous.checked = true
-                showChecked(sous)
+                vkus.select = true
+                showChecked(vkus)
 
                 showHide(binding.selectImage)
-               showHide(binding.isoncklik)
+               showHide(binding.selectImage)
 
             }
-            binding.seconcklik.setOnClickListener(){
-                sous.checked =false
-            }
+            /*binding.seconcklik.setOnClickListener(){
+                vkus.select =false
+            }*/
 
         }
 
 
-        fun bindText(sous: Sous) {
-            binding.sousName.text = sous.name
+        fun bindText(vkus: Vkus) {
+            binding.sousName.text = vkus.name
         }
 
-        fun bindSena(sous: Sous) {
-            binding.sena.text = sous.sena.toString()
+        fun bindSena(vkus: Vkus) {
+            binding.sena.text = vkus.price[Constants.MALENKAYA].toString()
         }
 
         fun showHide(view: View) {
@@ -67,12 +63,12 @@ class ListSousAdapter : ListAdapter<Sous, ListSousAdapter.SousViewHolder>(MyDiff
             }
         }
 
-        fun showChecked(sous: Sous) {
-            if (sous.checked) {
+        fun showChecked(vkus: Vkus) {
+            if (vkus.select) {
 
-                binding.isoncklik.setStrokeColorResource(R.color.orange.toInt())
+                binding.linearLayoutContiner.setBackgroundResource(R.drawable.stoke_select.toInt())
             } else {
-                binding.isoncklik.setStrokeColorResource(R.color.black.toInt())
+                binding.linearLayoutContiner.setBackgroundResource(R.color.black.toInt())
 
             }
 

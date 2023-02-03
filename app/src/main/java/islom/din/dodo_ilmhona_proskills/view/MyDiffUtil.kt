@@ -1,10 +1,10 @@
 package islom.din.dodo_ilmhona_proskills.view
 
 import androidx.recyclerview.widget.DiffUtil
-import islom.din.dodo_ilmhona_proskills.model.Sous
+import islom.din.dodo_ilmhona_proskills.data.Vkus
 
-class MyDiffUtil:DiffUtil.ItemCallback<Sous>() {
-    override fun areItemsTheSame(oldItem: Sous, newItem: Sous) :Boolean = oldItem.id == newItem.id
+class MyDiffUtil:DiffUtil.ItemCallback<Vkus>() {
+    override fun areItemsTheSame(oldItem: Vkus, newItem: Vkus) :Boolean = oldItem.id == newItem.id
 
-    override fun areContentsTheSame(oldItem: Sous, newItem: Sous):Boolean = oldItem == newItem
+    override fun areContentsTheSame(oldItem: Vkus, newItem: Vkus):Boolean = oldItem == newItem
 }

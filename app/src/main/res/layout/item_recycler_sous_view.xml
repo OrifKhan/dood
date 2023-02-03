@@ -1,122 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/beg_item"
+    style="@style/shape_img"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="15dp"
-    style="@style/shape_img"
-    android:id="@+id/beg_item"
-    android:layout_margin="5dp">
-
-
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/seconcklik"
+        android:id="@+id/select_images"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="2dp"
         android:padding="5dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_continer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout_continer"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout_continer"
-        app:shapeAppearance="@style/shape_img"
-        app:strokeColor="#FF5722"
-        app:strokeWidth="2dp" />
-
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout_continer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:orientation="vertical"
+        style="@style/shape_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-        <ImageView
-            android:id="@+id/imageSous"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="5dp"
-
-            android:contentDescription="TODO"
-            android:padding="10dp"
-            android:src="@drawable/ogursipng"
-            app:shapeAppearance="@style/shape_img" />
-
-        <TextView
-            android:id="@+id/sous_name"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="1dp"
-            android:text="Namee"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
 
         <LinearLayout
+            android:id="@+id/linearLayout_continer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/imageSous"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="5dp"
+
+                android:contentDescription="TODO"
+                android:padding="10dp"
+                android:src="@drawable/ingridient_5"
+                app:shapeAppearance="@style/shape_img" />
 
             <TextView
-                android:id="@+id/sena"
-                android:layout_width="wrap_content"
+                android:id="@+id/sous_name"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
-                android:text="22"
+                android:layout_margin="1dp"
+                android:lines="2"
+                android:maxEms="10"
+                android:text="Namee"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="12sp" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="TJS"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/sena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:text="22"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="TJS"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/isoncklik"
-        android:layout_width="103dp"
-        android:layout_height="152dp"
-        android:padding="3dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_continer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout_continer"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout_continer"
-        app:shapeAppearance="@style/shape_img"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="2dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="89dp" />
-    <ImageView
-        android:id="@+id/select_image"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="11dp"
-        android:src="@drawable/baseline_check_circle_outline_24"
-        android:visibility="invisible"
-        android:layout_gravity="end"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/select_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="11dp"
+            android:src="@drawable/baseline_check_circle_outline_24"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
