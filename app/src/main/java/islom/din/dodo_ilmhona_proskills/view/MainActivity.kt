@@ -2,6 +2,7 @@ package islom.din.dodo_ilmhona_proskills.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
 import islom.din.dodo_ilmhona_proskills.ComboFragment
 import islom.din.dodo_ilmhona_proskills.FragmetSelectPizza
 import islom.din.dodo_ilmhona_proskills.R
@@ -14,11 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frame_layout,ComboFragment.newInstance(), "comboFragment")
-            .addToBackStack("comboFragment")
-            .commit()
+        val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHost.navController
     }
 
     override fun onBackPressed() {
